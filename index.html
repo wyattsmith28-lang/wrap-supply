@@ -3,295 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oahu Wrap Supply | Vinyl Wrap Rolls on Oahu</title>
+  <title>Oahu Wrap Supply</title>
+  
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; background: #0b0b0b; color: #fff; line-height: 1.5; }
-    a, button { color: inherit; text-decoration: none; font-family: inherit; }
-    button { cursor: pointer; border: none; background: none; }
-    .nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 7%; border-bottom: 1px solid #222; position: sticky; top: 0; background: rgba(11,11,11,.96); z-index: 10; }
-    .logo { font-weight: 800; letter-spacing: 1px; font-size: 14px; }
-    .nav-links { display: flex; gap: 20px; font-size: 14px; color: #ccc; align-items: center; }
-    .nav-links button:hover { color: #fff; }
-    .cart-pill { background: #fff; color: #000; border-radius: 999px; padding: 9px 14px; font-weight: 800; }
-    .page { display: none; }
-    .page.active { display: block; }
-    .hero { min-height: 82vh; display: grid; place-items: center; padding: 64px 7%; background: radial-gradient(circle at top right, #292929, #0b0b0b 55%); }
-    .hero-inner { max-width: 1050px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 44px; align-items: center; }
-    .eyebrow { color: #b5b5b5; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; margin-bottom: 18px; }
-    h1 { font-size: clamp(42px, 7vw, 82px); line-height: .95; letter-spacing: -3px; margin-bottom: 24px; }
-    .hero p, .subtext { color: #d6d6d6; font-size: 18px; max-width: 720px; margin-bottom: 30px; }
-    .buttons { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn { padding: 15px 22px; border-radius: 999px; font-weight: 800; font-size: 14px; display: inline-block; }
-    .btn-primary { background: #fff; color: #000; }
-    .btn-secondary { border: 1px solid #555; color: #fff; }
-    .hero-card, .card, .product, .form-box, .cart-box { background: #151515; border: 1px solid #292929; border-radius: 24px; }
-    .hero-card { padding: 28px; box-shadow: 0 24px 80px rgba(0,0,0,.45); }
-    .roll { height: 260px; border-radius: 22px; background: linear-gradient(135deg, #f5f5f5, #343434 35%, #000 60%, #777); margin-bottom: 22px; }
-    .stock { display: grid; gap: 12px; }
-    .stock-row, .line-row { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #282828; color: #ddd; }
-    section, .page-shell { padding: 72px 7%; }
-    .section-title { font-size: 38px; margin-bottom: 14px; letter-spacing: -1px; }
-    .section-sub { color: #bfbfbf; max-width: 760px; margin-bottom: 34px; }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card { padding: 26px; }
-    .card h3 { margin-bottom: 10px; font-size: 21px; }
-    .card p { color: #c9c9c9; }
-    .products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .product { overflow: hidden; }
-    .swatch { height: 180px; }
-    .black { background: #050505; }
-    .satin { background: linear-gradient(135deg, #0d0d0d, #3a3a3a); }
-    .gray { background: #777; }
-    .white { background: #eee; }
-    .blue { background: #0b315d; }
-    .red { background: #741616; }
-    .green { background: #243f2b; }
-    .carbon { background: repeating-linear-gradient(45deg, #111 0 8px, #252525 8px 16px); }
-    .product-info { padding: 18px; }
-    .product-info span { color: #aaa; font-size: 13px; display: block; margin: 4px 0 12px; }
-    .price { font-size: 20px; font-weight: 900; margin-bottom: 14px; }
-    .mini-btn { width: 100%; background: #fff; color: #000; border-radius: 12px; padding: 12px; font-weight: 800; }
-    .cta { background: #f5f5f5; color: #000; border-radius: 34px; margin: 40px 7% 80px; padding: 52px; display: flex; justify-content: space-between; gap: 28px; align-items: center; }
-    .cta h2 { font-size: 38px; letter-spacing: -1px; }
-    .cta p { color: #333; margin-top: 8px; }
-    .cta .btn { background: #000; color: #fff; }
-    .page-header { padding: 54px 7% 20px; background: radial-gradient(circle at top right, #242424, #0b0b0b 60%); }
-    .page-header h1 { font-size: clamp(38px, 6vw, 68px); }
-    .filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
-    .filter { border: 1px solid #444; border-radius: 999px; padding: 10px 14px; color: #ddd; }
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
-    .form-box, .cart-box { padding: 24px; }
-    label { display: block; color: #bbb; font-size: 13px; margin: 14px 0 6px; }
-    input, select, textarea { width: 100%; background: #0d0d0d; border: 1px solid #333; color: #fff; border-radius: 12px; padding: 13px; font-size: 15px; }
-    textarea { min-height: 110px; resize: vertical; }
-    .notice { margin-top: 16px; padding: 14px; background: #202020; border: 1px solid #333; border-radius: 16px; color: #ddd; }
-    .cart-item { display: flex; justify-content: space-between; gap: 14px; padding: 14px 0; border-bottom: 1px solid #2a2a2a; }
-    .muted { color: #aaa; }
-    footer { padding: 30px 7%; color: #aaa; border-top: 1px solid #222; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    .mobile-menu { display: none; }
-    @media (max-width: 850px) {
-      .hero-inner, .grid, .products, .two-col { grid-template-columns: 1fr; }
-      .hero-inner { display: block; }
-      .hero-card { margin-top: 38px; }
-      .nav-links { display: none; }
-      .mobile-menu { display: block; color: #ddd; }
-      .mobile-drawer { display: none; padding: 12px 7% 18px; background: #111; border-bottom: 1px solid #222; }
-      .mobile-drawer.open { display: grid; gap: 12px; }
-      .mobile-drawer button { text-align: left; color: #ddd; padding: 8px 0; }
-      .cta { display: block; padding: 34px; }
-      .cta .btn { margin-top: 22px; }
-      section, .page-shell { padding: 48px 6%; }
-      .page-header { padding: 42px 6% 16px; }
-      .swatch { height: 140px; }
-    }
+    :root{--wrap:#777;--lime:#b7ff00;--bg:#090909;--card:#151515;--line:#2a2a2a}*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;background:var(--bg);color:white;line-height:1.45;padding-bottom:0}button,input,select,textarea{font-family:inherit}button{cursor:pointer;border:0;background:none;color:inherit}.nav{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.96);backdrop-filter:blur(10px);border-bottom:1px solid #222;padding:18px 7%;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:900;letter-spacing:1.5px}.nav-links{display:flex;gap:18px;align-items:center;color:#ccc;font-size:14px}.nav-links button:hover{color:white}.cart-pill{background:white;color:black;border-radius:999px;padding:9px 14px;font-weight:900}.menu-btn{display:none}.mobile-drawer{display:none}.page{display:none}.page.active{display:block}section,.page-head{padding:64px 7%}.page-head{background:radial-gradient(circle at top right,#242424,#0b0b0b 60%)}.eyebrow{color:#aaa;letter-spacing:2px;text-transform:uppercase;font-size:13px;margin-bottom:14px}h1{font-size:clamp(42px,7vw,82px);line-height:.95;letter-spacing:-3px;margin-bottom:20px}h2{font-size:32px;letter-spacing:-1px}.subtext{color:#cfcfcf;font-size:18px;max-width:760px}.btn{display:inline-block;padding:14px 20px;border-radius:999px;font-weight:900;font-size:14px}.btn-primary{background:white;color:black}.btn-secondary{border:1px solid #555;color:white}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.card,.hero-card,.product,.form-box,.cart-box,.visualizer-main,.visualizer-panel,.visualizer-info{background:var(--card);border:1px solid var(--line);border-radius:24px}.hero{min-height:82vh;display:grid;place-items:center;padding:64px 7%;background:radial-gradient(circle at top right,#2b2b2b,#090909 55%)}.hero-grid{max-width:1150px;display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:center}.hero p{color:#d6d6d6;font-size:18px;max-width:640px}.hero-card{padding:28px}.roll{height:260px;border-radius:22px;background:linear-gradient(135deg,#eee,#444 35%,#000 65%,#777);margin-bottom:18px}.row{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid #282828;color:#ddd}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}.card,.form-box,.cart-box{padding:24px}.card p{color:#c9c9c9;margin-top:8px}.why{background:#101010;border-top:1px solid #222;border-bottom:1px solid #222}.big{font-size:42px;font-weight:900}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.product{overflow:hidden;position:relative}.swatch{height:170px}.product-info{padding:18px}.product-info span{color:#aaa;font-size:13px;display:block;margin:4px 0 12px}.price{font-size:20px;font-weight:900;margin-bottom:12px}.mini-btn{width:100%;background:white;color:black;border-radius:12px;padding:12px;font-weight:900}.badge{display:inline-flex;border-radius:999px;padding:7px 10px;background:#242424;border:1px solid #383838;color:#eee;font-size:12px;font-weight:900}.badge.light{background:white;color:black;border-color:white}.badge.good{background:#12251a;color:#91ffb7;border-color:#224b31}.badge.warn{background:#2a2212;color:#ffd27c;border-color:#4b3c1d}.badges{position:absolute;top:12px;left:12px;display:flex;gap:6px;flex-wrap:wrap}.black{background:#050505}.satin{background:linear-gradient(135deg,#111,#555)}.gray{background:#777}.white{background:#eee}.blue{background:#0b315d}.red{background:#741616}.green{background:#243f2b}.carbon{background:repeating-linear-gradient(45deg,#111 0 8px,#252525 8px 16px)}label{display:block;color:#bbb;font-size:13px;margin:14px 0 6px}input,select,textarea{width:100%;background:#0d0d0d;border:1px solid #333;color:white;border-radius:12px;padding:13px;font-size:15px}textarea{min-height:110px}.notice{margin-top:16px;padding:14px;border:1px solid #333;background:#202020;border-radius:16px;color:#ddd}.muted{color:#aaa}.visualizer-layout{display:grid;grid-template-columns:1.55fr .8fr;gap:18px;align-items:start}.visualizer-main,.visualizer-panel,.visualizer-info{padding:20px}.visualizer-main{grid-row:span 2}.viewer-topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.viewer{position:relative;min-height:530px;border-radius:22px;overflow:hidden;background:#090909;border:1px solid #292929;display:grid;place-items:center}.gallery-main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .22s ease,transform .22s ease}.gallery-main.fade{opacity:.35;transform:scale(1.015)}.gallery-overlay{position:absolute;left:18px;right:18px;bottom:18px;z-index:5;display:flex;justify-content:space-between;align-items:end;gap:16px}.gallery-title{background:rgba(0,0,0,.72);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:14px 16px;backdrop-filter:blur(10px)}.gallery-title h3{font-size:22px}.gallery-title p{color:#ccc;font-size:13px}.gallery-badge{background:var(--lime);color:#000;border-radius:999px;padding:10px 14px;font-weight:900;font-size:13px}.gallery-thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:14px}.gallery-thumb{height:92px;border-radius:14px;border:1px solid #333;background:#191919;overflow:hidden;position:relative}.gallery-thumb.active{border-color:var(--lime)}.gallery-thumb img{width:100%;height:100%;object-fit:cover}.gallery-thumb span{position:absolute;left:6px;right:6px;bottom:6px;background:rgba(0,0,0,.65);border-radius:8px;padding:4px 6px;font-size:11px;font-weight:900}.wrap-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.wrap-option{background:#191919;border:1px solid #333;color:#ddd;border-radius:14px;padding:12px;display:flex;align-items:center;gap:10px;text-align:left;font-weight:900}.wrap-option.selected{border-color:var(--lime);color:white}.wrap-option span{width:30px;height:30px;border-radius:8px;border:1px solid rgba(255,255,255,.35);display:inline-block;flex:0 0 30px}.selection-box{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#191919;border:1px solid #333;border-radius:16px;padding:16px;margin:14px 0}.upload-box{margin-top:18px;padding-top:18px;border-top:1px solid #2a2a2a}.upload-btn{display:inline-block;background:white;color:black;border-radius:12px;padding:12px 16px;font-weight:900;margin-top:12px;cursor:pointer}.info-list{display:grid;gap:12px;margin-top:18px}.info-list div{background:#191919;border:1px solid #333;border-radius:14px;padding:14px;color:#ddd}.cart-item{display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid #2a2a2a}.success-icon{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:white;color:black;font-size:36px;font-weight:900;margin-bottom:18px}footer{padding:30px 7%;border-top:1px solid #222;color:#aaa;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.bottom-nav{display:none}@media(max-width:850px){body{padding-bottom:76px}.nav-links{display:none}.menu-btn{display:block}.mobile-drawer.open{display:grid;gap:12px;padding:14px 7%;background:#111;border-bottom:1px solid #222;position:sticky;top:57px;z-index:40}.mobile-drawer button{text-align:left;padding:8px 0;color:#ddd}.hero-grid,.grid,.two-col,.products,.visualizer-layout{grid-template-columns:1fr}.hero-grid{display:block}.hero-card{margin-top:34px}section,.page-head{padding:46px 6%}.viewer{min-height:330px}.studio-sign{font-size:36px;top:42px}.studio-sign small{font-size:11px;letter-spacing:5px}.wrap-rack{left:14px;top:52px;width:78px;gap:9px}.car-wrap{width:98%}.viewer-label.bottom{font-size:17px}.angle-strip,.wrap-grid{grid-template-columns:1fr 1fr}.bottom-nav{display:grid;position:fixed;bottom:0;left:0;right:0;height:68px;background:rgba(12,12,12,.97);border-top:1px solid #292929;grid-template-columns:repeat(4,1fr);z-index:60}.bottom-nav button{font-size:12px;font-weight:900;color:#ddd}}
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <button class="logo" onclick="showPage('home')">OAHU WRAP SUPPLY</button>
-    <div class="nav-links">
-      <button onclick="showPage('shop')">Shop Rolls</button>
-      <button onclick="showPage('samples')">Samples</button>
-      <button onclick="showPage('pickup')">Pickup</button>
-      <button onclick="showPage('shops')">For Shops</button>
-      <button onclick="showPage('contact')">Contact</button>
-      <button class="cart-pill" onclick="showPage('cart')">Cart <span id="cartCount">0</span></button>
-    </div>
-    <button class="mobile-menu" onclick="toggleMenu()">Menu</button>
-  </nav>
+  <nav class="nav"><button class="logo" onclick="showPage('home')">OAHU WRAP SUPPLY</button><div class="nav-links"><button onclick="showPage('shop')">Shop Rolls</button><button onclick="showPage('preview')">Color Gallery</button><button onclick="showPage('calculator')">Calculator</button><button onclick="showPage('samples')">Samples</button><button onclick="showPage('pickup')">Pickup</button><button onclick="showPage('shops')">For Shops</button><button onclick="showPage('contact')">Contact</button><button class="cart-pill" onclick="showPage('cart')">Cart <span id="cartCount">0</span></button></div><button class="menu-btn" onclick="toggleMenu()">Menu</button></nav>
+  <div class="mobile-drawer" id="mobileDrawer"><button onclick="showPage('shop')">Shop Rolls</button><button onclick="showPage('preview')">Color Gallery</button><button onclick="showPage('calculator')">Calculator</button><button onclick="showPage('samples')">Samples</button><button onclick="showPage('pickup')">Pickup</button><button onclick="showPage('shops')">For Shops</button><button onclick="showPage('contact')">Contact</button><button onclick="showPage('cart')">Cart <span id="cartCountMobile">0</span></button></div>
 
-  <div class="mobile-drawer" id="mobileDrawer">
-    <button onclick="showPage('shop')">Shop Rolls</button>
-    <button onclick="showPage('samples')">Samples</button>
-    <button onclick="showPage('pickup')">Pickup Info</button>
-    <button onclick="showPage('shops')">For Shops</button>
-    <button onclick="showPage('contact')">Contact</button>
-    <button onclick="showPage('cart')">Cart <span id="cartCountMobile">0</span></button>
-  </div>
+  <main id="home" class="page active"><header class="hero"><div class="hero-grid"><div><div class="eyebrow">Vinyl wrap rolls available on Oahu</div><h1>Need one roll today? Come pick it up on island.</h1><p>Automotive vinyl wrap rolls available for local pickup on Oahu. Buy one roll, stock up for a shop, or request a custom color without waiting on mainland shipping.</p><div class="buttons"><button class="btn btn-primary" onclick="showPage('shop')">Shop Available Rolls</button><button class="btn btn-secondary" onclick="showPage('preview')">See It On A Car</button></div></div><div class="hero-card"><div class="roll"></div><div class="row"><span>Gloss Black</span><strong>3 Rolls Left</strong></div><div class="row"><span>Satin Black</span><strong>Best Seller</strong></div><div class="row"><span>Nardo Gray</span><strong>Restocking Friday</strong></div></div></div></header><section class="why"><h2>Why Oahu needs this.</h2><p class="subtext">Mainland shipping takes too long. Hawaii installers and DIY customers need material now. Oahu Wrap Supply keeps popular wrap colors on island and ready for pickup.</p><div class="grid" style="margin-top:28px"><div class="card"><div class="big">Same Day</div><p>Local pickup for in-stock rolls when a job cannot wait.</p></div><div class="card"><div class="big">1 Roll</div><p>No wholesale account needed. Buy one roll or multiple rolls.</p></div><div class="card"><div class="big">Oahu</div><p>Built around shipping delays and limited local inventory.</p></div></div></section><section><h2>Trusted by local builders.</h2><div class="grid" style="margin-top:24px"><div class="card"><p>★★★★★</p><p>“Saved our wrap job when our shipment got delayed.”</p></div><div class="card"><p>★★★★★</p><p>“Way easier than waiting on mainland shipping.”</p></div><div class="card"><p>★★★★★</p><p>“Finally someone stocking wrap on island.”</p></div></div></section></main>
 
-  <main id="home" class="page active">
-    <header class="hero">
-      <div class="hero-inner">
-        <div>
-          <div class="eyebrow">Vinyl wrap rolls available on Oahu</div>
-          <h1>Need one roll today? Come pick it up on island.</h1>
-          <p>Automotive vinyl wrap rolls available for local pickup on Oahu. Buy one roll, stock up for a shop, or request a custom color without waiting on mainland shipping.</p>
-          <div class="buttons">
-            <button class="btn btn-primary" onclick="showPage('shop')">Shop Available Rolls</button>
-            <button class="btn btn-secondary" onclick="showPage('contact')">Check Availability</button>
-          </div>
-        </div>
-        <div class="hero-card">
-          <div class="roll"></div>
-          <div class="stock">
-            <div class="stock-row"><span>Gloss Black</span><strong>In Stock</strong></div>
-            <div class="stock-row"><span>Satin Black</span><strong>In Stock</strong></div>
-            <div class="stock-row"><span>Nardo Gray</span><strong>In Stock</strong></div>
-            <div class="stock-row"><span>Custom Colors</span><strong>Special Order</strong></div>
-          </div>
-        </div>
-      </div>
-    </header>
+  <main id="shop" class="page"><div class="page-head"><div class="eyebrow">Shop vinyl wrap</div><h1>Available rolls</h1><p class="subtext">Demo inventory with clickable add-to-cart buttons, stock badges, and local pickup positioning.</p></div><section><div class="products" id="productGrid"></div></section></main>
 
-    <section>
-      <h2 class="section-title">Buy one roll or stock the whole shop.</h2>
-      <p class="section-sub">Oahu Wrap Supply is built for anyone who needs wrap material fast. DIY car owners, detailers, installers, and wrap shops can all buy locally without waiting for shipping.</p>
-      <div class="grid">
-        <div class="card"><h3>One-roll purchases</h3><p>No account needed. Buy a single roll for a roof wrap, mirrors, trim, chrome delete, or full color change.</p></div>
-        <div class="card"><h3>Local pickup</h3><p>Reserve online, then pick up on Oahu instead of losing days waiting for mainland shipping.</p></div>
-        <div class="card"><h3>Shop pricing available</h3><p>For installers and detailers buying regularly, preferred pricing can be offered on repeat orders.</p></div>
-      </div>
-    </section>
+  <main id="preview" class="page"><div class="page-head"><div class="eyebrow">Wrap color gallery</div><h1>See what each wrap color looks like.</h1><p class="subtext">Choose a wrap color and the gallery updates to a realistic vehicle mockup so customers can compare finishes without a complicated 360 tool.</p></div><section><div class="visualizer-layout"><div class="visualizer-main"><div class="viewer-topbar"><span class="badge light">Color Gallery</span><span class="muted">Realistic SUV mockups • color comparison • simple buyer flow</span></div><div class="viewer"><img id="galleryMain" class="gallery-main" src="sleek_suv_in_dramatic_studio_lighting.png" alt="Nardo gray wrap preview"><div class="gallery-overlay"><div class="gallery-title"><h3 id="galleryTitle">Nardo Gray</h3><p id="gallerySub">Satin finish on a luxury SUV in studio lighting.</p></div><div class="gallery-badge">Preview Color</div></div></div><div class="gallery-thumbs" id="galleryThumbs"></div></div><div class="visualizer-panel"><h2>Choose your wrap</h2><p class="muted">Tap a color to update the gallery image.</p><div class="wrap-grid" id="wrapGrid"></div><div class="selection-box"><div><span class="muted">Your selection</span><h3 id="selectedWrapName">Nardo Gray</h3></div><strong id="selectedWrapPrice">$599</strong></div><button class="mini-btn" onclick="addSelectedWrapToCart()">Add Selected Wrap To Cart</button><div class="upload-box"><h3>Want your own car?</h3><p class="muted">In the real version, customers could upload their car and request a custom mockup before buying.</p><label class="upload-btn" for="carUpload">Upload Photo</label><input id="carUpload" type="file" accept="image/*" onchange="handleCarUpload(event)" style="display:none"></div></div><div class="visualizer-info"><h2>Wrap info</h2><div class="info-list"><div>High quality cast vinyl</div><div>Air release technology</div><div>UV resistant</div><div>Removable adhesive</div><div>Made for Hawaii conditions</div></div><div class="notice">Prototype gallery only. Replace the image filenames with final hosted images when deploying.</div></div></div></section></main>
 
-    <div class="cta">
-      <div>
-        <h2>Make wrap easy to get on Oahu.</h2>
-        <p>This prototype lets customers browse rolls, request samples, reserve pickup, and message the supplier.</p>
-      </div>
-      <button class="btn" onclick="showPage('shop')">Click Through Site</button>
-    </div>
-  </main>
+  <main id="calculator" class="page"><div class="page-head"><div class="eyebrow">Wrap calculator</div><h1>How much wrap do I need?</h1><p class="subtext">A simple calculator makes the site feel useful.</p></div><section class="two-col"><div class="form-box"><h2>Estimate material</h2><label>Vehicle type</label><select id="vehicleType" onchange="calcWrap()"><option value="sedan">Sedan</option><option value="coupe">Coupe</option><option value="truck">Truck</option><option value="suv">SUV</option><option value="van">Van</option></select><label>Project type</label><select id="projectType" onchange="calcWrap()"><option value="full">Full color change</option><option value="roof">Roof only</option><option value="hood">Hood only</option><option value="chrome">Chrome delete / trim</option><option value="mirrors">Mirrors</option></select><div class="notice"><strong id="wrapResult">Recommended: 1 full roll</strong><br><span id="wrapDetail">Most sedans need one full roll.</span></div><button class="btn btn-primary" style="margin-top:16px" onclick="showPage('shop')">Shop Recommended Rolls</button></div><div class="card"><h3>Why this helps sell</h3><p>Most DIY people do not know if they need a full roll or a smaller amount.</p></div></section></main>
+  <main id="samples" class="page"><div class="page-head"><div class="eyebrow">Try before buying</div><h1>Sample request</h1><p class="subtext">Customers can request small samples before committing to a full roll.</p></div><section class="two-col"><div class="form-box"><h2>Request samples</h2><label>Name</label><input placeholder="Your name"><label>Phone</label><input placeholder="808-000-0000"><label>Colors wanted</label><textarea placeholder="Example: gloss black, satin black, nardo gray"></textarea><button class="btn btn-primary" style="margin-top:16px" onclick="fakeSubmit('Sample request received')">Submit Sample Request</button></div><div class="card"><h3>Sample kit idea</h3><p>Offer a sample pack for $10 to $20, then credit it toward a full roll purchase.</p></div></section></main>
+  <main id="pickup" class="page"><div class="page-head"><div class="eyebrow">Local convenience</div><h1>Pickup on Oahu</h1><p class="subtext">The entire point is speed.</p></div><section class="grid"><div class="card"><h3>1. Choose a roll</h3><p>Browse in-stock colors and add a roll to your cart.</p></div><div class="card"><h3>2. Reserve pickup</h3><p>Send your order request and we confirm color, quantity, and pickup time.</p></div><div class="card"><h3>3. Grab it locally</h3><p>No mainland wait time. No expensive shipping.</p></div></section></main>
+  <main id="shops" class="page"><div class="page-head"><div class="eyebrow">For detailers and installers</div><h1>Installer program</h1><p class="subtext">Available for businesses buying consistently.</p></div><section class="two-col"><div class="card"><h3>Why shops would use us</h3><p>Local backup inventory, emergency rolls, faster turnaround, stock alerts, and fewer delayed installs.</p></div><div class="form-box"><h2>Join installer program</h2><label>Business name</label><input><label>Contact info</label><input><button class="btn btn-primary" style="margin-top:16px" onclick="fakeSubmit('Installer program request received')">Request Access</button></div></section></main>
+  <main id="contact" class="page"><div class="page-head"><div class="eyebrow">Ask about inventory</div><h1>Contact us</h1><p class="subtext">This page makes the prototype feel operational.</p></div><section class="two-col"><div class="form-box"><h2>Send a message</h2><label>Name</label><input><label>Phone or email</label><input><label>What do you need?</label><textarea></textarea><button class="btn btn-primary" style="margin-top:16px" onclick="fakeSubmit('Message sent')">Send Message</button></div><div class="cart-box"><h2>Contact info</h2><div class="row"><span>Pickup</span><strong>Oahu</strong></div><div class="row"><span>Phone</span><strong>808-000-0000</strong></div><div class="row"><span>Email</span><strong>info@oahuwrapsupply.com</strong></div></div></section></main>
+  <main id="cart" class="page"><div class="page-head"><div class="eyebrow">Demo checkout</div><h1>Your cart</h1><p class="subtext">This is a fake checkout flow.</p></div><section class="two-col"><div class="cart-box"><h2>Items</h2><div id="cartItems"></div><div class="row"><span>Total</span><strong id="cartTotal">$0</strong></div><button class="btn btn-primary" style="margin-top:16px" onclick="showPage('checkout')">Reserve for Pickup</button></div><div class="card"><h3>Prototype note</h3><p>This can later connect to Square, Stripe, Shopify, or a simple form.</p></div></section></main>
+  <main id="checkout" class="page"><div class="page-head"><div class="eyebrow">Reserve order</div><h1>Pickup reservation</h1><p class="subtext">Collect customer info and manually confirm availability before taking payment.</p></div><section class="form-box" style="max-width:760px;margin:auto"><h2>Reserve your roll</h2><label>Name</label><input><label>Phone</label><input><label>Preferred pickup time</label><select><option>Today</option><option>Tomorrow</option><option>This week</option></select><button class="btn btn-primary" style="margin-top:16px" onclick="showPage('success')">Submit Reservation</button></section></main>
+  <main id="success" class="page"><section style="min-height:70vh;display:grid;place-items:center"><div class="cart-box" style="max-width:620px"><div class="success-icon">✓</div><h1 style="font-size:46px">Your roll has been reserved.</h1><p class="subtext">This demo success page makes the checkout flow feel real.</p><div class="buttons"><button class="btn btn-primary" onclick="showPage('shop')">Keep Shopping</button><button class="btn btn-secondary" onclick="showPage('home')">Back Home</button></div></div></section></main>
 
-  <main id="shop" class="page">
-    <div class="page-header"><div class="eyebrow">Shop vinyl wrap</div><h1>Available rolls</h1><p class="subtext">Demo inventory with clickable add-to-cart buttons. Prices can be changed once real landed cost is known.</p></div>
-    <section>
-      <div class="filters"><button class="filter">All</button><button class="filter">Gloss</button><button class="filter">Satin</button><button class="filter">Carbon</button><button class="filter">Special Order</button></div>
-      <div class="products">
-        <div class="product"><div class="swatch black"></div><div class="product-info"><h3>Gloss Black</h3><span>5ft x 59ft roll</span><div class="price">$499</div><button class="mini-btn" onclick="addToCart('Gloss Black Roll', 499)">Add to Cart</button></div></div>
-        <div class="product"><div class="swatch satin"></div><div class="product-info"><h3>Satin Black</h3><span>5ft x 59ft roll</span><div class="price">$529</div><button class="mini-btn" onclick="addToCart('Satin Black Roll', 529)">Add to Cart</button></div></div>
-        <div class="product"><div class="swatch gray"></div><div class="product-info"><h3>Nardo Gray</h3><span>5ft x 59ft roll</span><div class="price">$549</div><button class="mini-btn" onclick="addToCart('Nardo Gray Roll', 549)">Add to Cart</button></div></div>
-        <div class="product"><div class="swatch white"></div><div class="product-info"><h3>Gloss White</h3><span>5ft x 59ft roll</span><div class="price">$499</div><button class="mini-btn" onclick="addToCart('Gloss White Roll', 499)">Add to Cart</button></div></div>
-        <div class="product"><div class="swatch carbon"></div><div class="product-info"><h3>Carbon Fiber</h3><span>Accent roll</span><div class="price">$189</div><button class="mini-btn" onclick="addToCart('Carbon Fiber Accent Roll', 189)">Add to Cart</button></div></div>
-        <div class="product"><div class="swatch blue"></div><div class="product-info"><h3>Gloss Deep Blue</h3><span>Special order</span><div class="price">Request</div><button class="mini-btn" onclick="showPage('contact')">Request Color</button></div></div>
-        <div class="product"><div class="swatch red"></div><div class="product-info"><h3>Gloss Red</h3><span>Special order</span><div class="price">Request</div><button class="mini-btn" onclick="showPage('contact')">Request Color</button></div></div>
-        <div class="product"><div class="swatch green"></div><div class="product-info"><h3>Military Green</h3><span>Special order</span><div class="price">Request</div><button class="mini-btn" onclick="showPage('contact')">Request Color</button></div></div>
-      </div>
-    </section>
-  </main>
-
-  <main id="samples" class="page">
-    <div class="page-header"><div class="eyebrow">Try before buying</div><h1>Sample request</h1><p class="subtext">Customers can request small samples before committing to a full roll.</p></div>
-    <section class="two-col">
-      <div class="form-box">
-        <h2>Request samples</h2>
-        <label>Name</label><input placeholder="Your name">
-        <label>Phone</label><input placeholder="808-000-0000">
-        <label>Colors wanted</label><textarea placeholder="Example: gloss black, satin black, nardo gray"></textarea>
-        <button class="btn btn-primary" style="margin-top:16px;" onclick="fakeSubmit('Sample request received')">Submit Sample Request</button>
-      </div>
-      <div class="card">
-        <h3>Sample kit idea</h3>
-        <p>Offer a small sample pack for $10 to $20, then credit it toward a full roll purchase. This makes the site feel real and reduces risk for new buyers.</p>
-        <div class="notice">Demo feature only. No payment integration is connected yet.</div>
-      </div>
-    </section>
-  </main>
-
-  <main id="pickup" class="page">
-    <div class="page-header"><div class="eyebrow">Local convenience</div><h1>Pickup on Oahu</h1><p class="subtext">The entire point is speed. Customers reserve material, then pick it up locally.</p></div>
-    <section class="grid">
-      <div class="card"><h3>1. Choose a roll</h3><p>Browse in-stock colors and add a roll to your cart.</p></div>
-      <div class="card"><h3>2. Reserve pickup</h3><p>Send your order request and we confirm color, quantity, and pickup time.</p></div>
-      <div class="card"><h3>3. Grab it locally</h3><p>No mainland wait time. No expensive shipping. Just material ready on Oahu.</p></div>
-    </section>
-  </main>
-
-  <main id="shops" class="page">
-    <div class="page-header"><div class="eyebrow">For detailers and installers</div><h1>Shop accounts</h1><p class="subtext">Not required, but available for businesses buying consistently.</p></div>
-    <section class="two-col">
-      <div class="card"><h3>Why shops would use us</h3><p>Local backup inventory, emergency rolls, faster job turnaround, and fewer delayed installs when shipping gets slow.</p><div class="notice">Positioning: we are not trying to replace every supplier. We are the local option when timing matters.</div></div>
-      <div class="form-box">
-        <h2>Apply for shop pricing</h2>
-        <label>Business name</label><input placeholder="Business name">
-        <label>Contact info</label><input placeholder="Phone or email">
-        <label>How often do you buy wrap?</label><select><option>Occasionally</option><option>Monthly</option><option>Weekly</option></select>
-        <button class="btn btn-primary" style="margin-top:16px;" onclick="fakeSubmit('Shop account request received')">Request Shop Pricing</button>
-      </div>
-    </section>
-  </main>
-
-  <main id="contact" class="page">
-    <div class="page-header"><div class="eyebrow">Ask about inventory</div><h1>Contact us</h1><p class="subtext">This page makes the prototype feel operational without needing real integrations yet.</p></div>
-    <section class="two-col">
-      <div class="form-box">
-        <h2>Send a message</h2>
-        <label>Name</label><input placeholder="Your name">
-        <label>Phone or email</label><input placeholder="Best contact">
-        <label>What do you need?</label><textarea placeholder="Example: I need one roll of gloss black today"></textarea>
-        <button class="btn btn-primary" style="margin-top:16px;" onclick="fakeSubmit('Message sent')">Send Message</button>
-      </div>
-      <div class="cart-box">
-        <h2>Contact info</h2>
-        <div class="line-row"><span>Pickup</span><strong>Oahu</strong></div>
-        <div class="line-row"><span>Phone</span><strong>808-000-0000</strong></div>
-        <div class="line-row"><span>Email</span><strong>info@oahuwrapsupply.com</strong></div>
-        <div class="notice">Replace with real phone, email, and pickup address later.</div>
-      </div>
-    </section>
-  </main>
-
-  <main id="cart" class="page">
-    <div class="page-header"><div class="eyebrow">Demo checkout</div><h1>Your cart</h1><p class="subtext">This is a fake checkout flow so your boss can click through the buying process.</p></div>
-    <section class="two-col">
-      <div class="cart-box">
-        <h2>Items</h2>
-        <div id="cartItems"><p class="muted">Your cart is empty. Add a roll from the shop page.</p></div>
-        <div class="line-row"><span>Total</span><strong id="cartTotal">$0</strong></div>
-        <button class="btn btn-primary" style="margin-top:16px;" onclick="showPage('checkout')">Reserve for Pickup</button>
-      </div>
-      <div class="card"><h3>Prototype note</h3><p>This can later connect to Square, Stripe, Shopify, or a simple form. For now it proves the customer journey.</p></div>
-    </section>
-  </main>
-
-  <main id="checkout" class="page">
-    <div class="page-header"><div class="eyebrow">Reserve order</div><h1>Pickup reservation</h1><p class="subtext">Collect customer info and manually confirm availability before taking payment.</p></div>
-    <section class="form-box" style="max-width:760px; margin:auto;">
-      <h2>Reserve your roll</h2>
-      <label>Name</label><input placeholder="Your name">
-      <label>Phone</label><input placeholder="808-000-0000">
-      <label>Preferred pickup time</label><select><option>Today</option><option>Tomorrow</option><option>This week</option></select>
-      <label>Notes</label><textarea placeholder="Anything we should know?"></textarea>
-      <button class="btn btn-primary" style="margin-top:16px;" onclick="fakeSubmit('Pickup reservation submitted')">Submit Reservation</button>
-    </section>
-  </main>
-
-  <footer>
-    <span>Oahu Wrap Supply</span>
-    <span>Local pickup • Single roll purchases • Shop pricing available</span>
-  </footer>
+  <div class="bottom-nav"><button onclick="showPage('home')">Home</button><button onclick="showPage('shop')">Shop</button><button onclick="showPage('preview')">Gallery</button><button onclick="showPage('cart')">Cart</button></div><footer><span>Oahu Wrap Supply</span><span>Local pickup • Single roll purchases • Shop pricing available</span></footer>
 
   <script>
-    let cart = [];
-    function showPage(id) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      document.getElementById('mobileDrawer').classList.remove('open');
-      window.scrollTo(0,0);
-    }
-    function toggleMenu() {
-      document.getElementById('mobileDrawer').classList.toggle('open');
-    }
-    function addToCart(name, price) {
-      cart.push({ name, price });
-      updateCart();
-      showPage('cart');
-    }
-    function updateCart() {
-      document.getElementById('cartCount').textContent = cart.length;
-      document.getElementById('cartCountMobile').textContent = cart.length;
-      const items = document.getElementById('cartItems');
-      const total = cart.reduce((sum, item) => sum + item.price, 0);
-      document.getElementById('cartTotal').textContent = '$' + total;
-      if (!cart.length) {
-        items.innerHTML = '<p class="muted">Your cart is empty. Add a roll from the shop page.</p>';
-        return;
-      }
-      items.innerHTML = cart.map(item => `<div class="cart-item"><span>${item.name}</span><strong>$${item.price}</strong></div>`).join('');
-    }
-    function fakeSubmit(message) {
-      alert(message + '. This is a prototype demo.');
-    }
+    window.OahuWrapApp={cart:[]};
+    const products=[{name:'Gloss Black',price:499,cls:'black',badges:['3 Left','Pickup Today']},{name:'Satin Black',price:529,cls:'satin',badges:['Best Seller']},{name:'Nardo Gray',price:549,cls:'gray',badges:['Restocking Friday']},{name:'Gloss White',price:499,cls:'white',badges:['Pickup Today']},{name:'Carbon Fiber',price:189,cls:'carbon',badges:['Accent']},{name:'Gloss Deep Blue',price:null,cls:'blue',badges:['Special Order']},{name:'Gloss Red',price:null,cls:'red',badges:['Special Order']},{name:'Military Green',price:null,cls:'green',badges:['Special Order']}];
+    const wraps=[{name:'Nardo Gray',price:599,color:'#777',image:'sleek_suv_in_dramatic_studio_lighting.png',sub:'Satin finish on a luxury SUV in studio lighting.'},{name:'Gloss Black',price:499,color:'#050505',image:'sleek_black_suv_in_dramatic_studio_lighting.png',sub:'Deep gloss black wrap with a premium blackout look.'},{name:'Satin Black',price:529,color:'#222',image:'sleek_matte_suv_in_moody_studio_light.png',sub:'Stealth satin black finish with soft reflections.'},{name:'Pearl White',price:549,color:'#eee',image:'white_luxury_suv_in_showroom_setting.png',sub:'Clean pearl white wrap with high-end showroom contrast.'},{name:'Midnight Blue',price:579,color:'#0b315d',image:'sleek_blue_luxury_suv_in_studio_lighting.png',sub:'Rich dark blue wrap with dramatic studio highlights.'},{name:'Military Green',price:579,color:'#243f2b',image:'sleek_olive_suv_in_studio_showcase.png',sub:'Olive green wrap with a rugged, modern look.'}];
+    const $=id=>document.getElementById(id);
+    window.showPage=function(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));const page=$(id);if(page)page.classList.add('active');const drawer=$('mobileDrawer');if(drawer)drawer.classList.remove('open');window.scrollTo(0,0)};
+    window.toggleMenu=function(){const d=$('mobileDrawer');if(d)d.classList.toggle('open')};
+    window.addToCart=function(name,price){window.OahuWrapApp.cart.push({name,price});updateCart();showPage('cart')};
+    function updateCart(){const cart=window.OahuWrapApp.cart;if($('cartCount'))$('cartCount').textContent=cart.length;if($('cartCountMobile'))$('cartCountMobile').textContent=cart.length;const total=cart.reduce((s,i)=>s+Number(i.price||0),0);if($('cartTotal'))$('cartTotal').textContent='$'+total;if($('cartItems'))$('cartItems').innerHTML=cart.length?cart.map(i=>`<div class="cart-item"><span>${i.name}</span><strong>$${i.price}</strong></div>`).join(''):'<p class="muted">Your cart is empty. Add a roll from the shop page.</p>'}
+    window.selectWrap=function(name,price,color,btn){if($('selectedWrapName'))$('selectedWrapName').textContent=name;if($('selectedWrapPrice'))$('selectedWrapPrice').textContent='$'+price;document.documentElement.style.setProperty('--wrap',color);document.querySelectorAll('.wrap-option').forEach(o=>o.classList.remove('selected'));if(btn)btn.classList.add('selected');const wrap=wraps.find(w=>w.name===name);if(wrap)updateGallery(wrap)};
+    window.addSelectedWrapToCart=function(){const name=($('selectedWrapName')?.textContent||'Nardo Gray')+' Roll';const price=parseInt(($('selectedWrapPrice')?.textContent||'$599').replace(/[^0-9]/g,''),10)||599;addToCart(name,price)};
+    window.setAngle=function(){};
+    window.handleCarUpload=function(e){const file=e.target.files&&e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=ev=>{if($('galleryMain'))$('galleryMain').src=ev.target.result;if($('galleryTitle'))$('galleryTitle').textContent='Your Uploaded Car';if($('gallerySub'))$('gallerySub').textContent='Custom uploaded preview. Colors shown in gallery remain available below.'};reader.readAsDataURL(file)};
+    window.calcWrap=function(){const v=$('vehicleType')?.value||'sedan',p=$('projectType')?.value||'full',r=$('wrapResult'),d=$('wrapDetail');if(!r||!d)return;if(p==='full'&&['suv','van'].includes(v)){r.textContent='Recommended: 1 to 2 full rolls';d.textContent='Larger vehicles may need more material depending on installer experience and color direction.'}else if(p==='full'){r.textContent='Recommended: 1 full roll';d.textContent='Most coupes, sedans, and trucks can usually start with one 5ft x 59ft roll.'}else if(['roof','hood'].includes(p)){r.textContent='Recommended: partial roll or accent roll';d.textContent='A hood or roof project usually does not need a full roll.'}else{r.textContent='Recommended: small accent roll';d.textContent='Trim, mirrors, and chrome delete projects usually need much less than a full roll.'}};
+    function updateGallery(wrap){const img=$('galleryMain');if(!img)return;img.classList.add('fade');setTimeout(()=>{img.src=wrap.image;img.alt=wrap.name+' wrap preview';if($('galleryTitle'))$('galleryTitle').textContent=wrap.name;if($('gallerySub'))$('gallerySub').textContent=wrap.sub||'';document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.toggle('active',t.dataset.name===wrap.name));img.classList.remove('fade')},120)}
+    window.fakeSubmit=msg=>alert(msg+'. This is a prototype demo.');
+    function renderProducts(){const grid=$('productGrid');if(!grid)return;grid.innerHTML=products.map(p=>{const badges=p.badges.map(b=>`<span class="badge ${b.includes('Pickup')?'good':b.includes('Best')?'light':b.includes('Left')||b.includes('Restocking')?'warn':''}">${b}</span>`).join('');return`<div class="product"><div class="badges">${badges}</div><div class="swatch ${p.cls}"></div><div class="product-info"><h3>${p.name}</h3><span>${p.price?'5ft x 59ft roll':'Special order'}</span><div class="price">${p.price?'$'+p.price:'Request'}</div><button class="mini-btn" onclick="${p.price?`addToCart('${p.name} Roll',${p.price})`:`showPage('contact')`}">${p.price?'Add to Cart':'Request Color'}</button></div></div>`}).join('')}
+    function renderWraps(){const grid=$('wrapGrid');if(!grid)return;grid.innerHTML=wraps.map((w,i)=>`<button class="wrap-option ${i===0?'selected':''}" onclick="selectWrap('${w.name}',${w.price},'${w.color}',this)"><span style="background:${w.color}"></span>${w.name}</button>`).join('');renderGalleryThumbs()} 
+    function renderGalleryThumbs(){const grid=$('galleryThumbs');if(!grid)return;grid.innerHTML=wraps.map((w,i)=>`<button class="gallery-thumb ${i===0?'active':''}" data-name="${w.name}" onclick="selectWrap('${w.name}',${w.price},'${w.color}',document.querySelectorAll('.wrap-option')[${i}])"><img src="${w.image}" alt="${w.name}"><span>${w.name}</span></button>`).join('')}
+    function runTests(){console.assert(typeof showPage==='function','showPage exists');console.assert(typeof selectWrap==='function','selectWrap exists');console.assert(document.querySelectorAll('.page').length>=9,'all pages exist');console.assert($('galleryMain'),'gallery main image exists');console.assert($('wrapGrid'),'wrap grid exists')}
+    function init(){renderProducts();renderWraps();updateCart();calcWrap();runTests()}
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
   </script>
 </body>
 </html>
